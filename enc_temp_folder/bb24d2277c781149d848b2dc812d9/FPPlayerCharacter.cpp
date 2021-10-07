@@ -61,7 +61,7 @@ void AFPPlayerCharacter::OnStartCrouch(float HalfHeightAdjust, float ScaledHalfH
 {
 	Super::OnStartCrouch(HalfHeightAdjust, ScaledHalfHeightAdjust);
 
-	CameraComponent->SetRelativeLocation(CameraComponent->GetRelativeLocation() - FVector(0.0f, 0.0f, HalfHeightAdjust));
+	CameraComponent->SetRelativeLocation(CameraComponent->GetRelativeLocation() + FVector(0.0f, 0.0f, HalfHeightAdjust));
 }
 
 void AFPPlayerCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)

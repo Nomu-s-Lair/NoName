@@ -24,6 +24,7 @@ public:
 	virtual void LookUp(float Value) {};
 
 	virtual void Jump() override;
+	virtual void ChangeCrouchState();
 
 	virtual bool CanJumpInternal_Implementation() const override;
 

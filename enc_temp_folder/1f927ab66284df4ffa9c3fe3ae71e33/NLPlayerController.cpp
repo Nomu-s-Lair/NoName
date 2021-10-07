@@ -86,7 +86,6 @@ void ANLPlayerController::ChangeCrouchState()
 {
 	if (CachedBaseCharacter.IsValid())
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, TEXT("Crouch"));
 		CachedBaseCharacter->ChangeCrouchState();
 	}
 }

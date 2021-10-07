@@ -21,6 +21,7 @@ protected:
 	virtual void SetupInputComponent() override;
 
 private:
+	//Inut Axis
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void TurnAtRate(float Value);
@@ -28,7 +29,9 @@ private:
 	void LookUpAtRate(float Value);
 	void LookUp(float Value);
 
+	//Input Actions
 	void Jump();
+	void ChangeCrouchState();
 
 	TSoftObjectPtr<class ANLBaseCharacter> CachedBaseCharacter;
 	

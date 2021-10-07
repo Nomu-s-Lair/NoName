@@ -20,6 +20,18 @@ void ANLBaseCharacter::Jump()
 	}
 }
 
+void ANLBaseCharacter::ChangeCrouchState()
+{
+	if (!GetCharacterMovement()->IsCrouching())
+	{
+		Crouch();
+	}
+	else
+	{
+		UnCrouch();
+	}
+}
+
 bool ANLBaseCharacter::CanJumpInternal_Implementation() const
 {
 	return Super::CanJumpInternal_Implementation();

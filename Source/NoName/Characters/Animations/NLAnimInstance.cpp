@@ -25,4 +25,5 @@ void UNLAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 	Speed = CharacterMovement->GetVelocity();
 	bIsFalling = CharacterMovement->IsFalling();
+	bIsCrouching = CharacterMovement->IsCrouching();
 }
