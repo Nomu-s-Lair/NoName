@@ -17,4 +17,14 @@ class NONAME_API UNLCharacterMovementComponent : public UCharacterMovementCompon
 public:
 	virtual float GetMaxSpeed() const override;
 	float GetVelocity() { return Velocity.Size(); };
+
+	/** Sprint **/
+	bool bIsSprinting = false;
+	FORCEINLINE bool IsSprinting() { return bIsSprinting; }
+	void StartSprint();
+	void StopSprint();
+
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character movement | Speed", meta = (ClampMin = 0.0f, UIMin = 0.0f))
+		float SprintSpeed = 1200.0f;
 };

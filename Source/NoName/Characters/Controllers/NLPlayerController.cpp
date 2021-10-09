@@ -24,6 +24,8 @@ void ANLPlayerController::SetupInputComponent()
 
 	InputComponent->BindAction("Jump", EInputEvent::IE_Pressed, this, &ANLPlayerController::Jump);
 	InputComponent->BindAction("Crouch", EInputEvent::IE_Pressed, this, &ANLPlayerController::ChangeCrouchState);
+	InputComponent->BindAction("Sprint", EInputEvent::IE_Pressed, this, &ANLPlayerController::StartSprint);
+	InputComponent->BindAction("Sprint", EInputEvent::IE_Released, this, &ANLPlayerController::StopSprint);
 }
 
 void ANLPlayerController::MoveForward(float Value)
@@ -86,7 +88,22 @@ void ANLPlayerController::ChangeCrouchState()
 {
 	if (CachedBaseCharacter.IsValid())
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, TEXT("Crouch"));
 		CachedBaseCharacter->ChangeCrouchState();
+	}
+}
+
+void ANLPlayerController::StartSprint()
+{
+	if (CachedBaseCharacter.IsValid())
+	{
+		CachedBaseCharacter->StartSprint();
+	}
+}
+
+void ANLPlayerController::StopSprint()
+{
+	if (CachedBaseCharacter.IsValid())
+	{
+		CachedBaseCharacter->StopSprint();
 	}
 }

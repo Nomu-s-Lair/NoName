@@ -32,6 +32,8 @@ private:
 	//Input Actions
 	void Jump();
 	void ChangeCrouchState();
+	void StartSprint();
+	void StopSprint();
 
 	TSoftObjectPtr<class ANLBaseCharacter> CachedBaseCharacter;
 	

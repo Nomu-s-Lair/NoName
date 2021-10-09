@@ -16,6 +16,8 @@ class NONAME_API ANLBaseCharacter : public ACharacter
 public:
 	ANLBaseCharacter(const FObjectInitializer& ObjectInitializer);
 
+	virtual void Tick(float DeltaTime) override;
+
 	virtual void MoveForward(float Value) {};
 	virtual void MoveRight(float Value) {};
 	virtual void TurnAtRate(float Value) {};
@@ -25,6 +27,8 @@ public:
 
 	virtual void Jump() override;
 	virtual void ChangeCrouchState();
+	virtual void StartSprint();
+	virtual void StopSprint();
 
 	virtual bool CanJumpInternal_Implementation() const override;
 
@@ -33,4 +37,9 @@ public:
 
 protected:
 	UNLCharacterMovementComponent* NLCharacterMovementComponent = nullptr;
+
+	bool bIsSprintRequested = false;
+
+	virtual bool CanSprint();
+	void TryChangeSprintState();
 };
